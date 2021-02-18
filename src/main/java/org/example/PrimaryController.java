@@ -5,7 +5,6 @@ import java.net.URL;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -16,17 +15,36 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 public class PrimaryController implements Initializable {
 
-    @FXML private TableView<PaymentDto> theTable;
-    @FXML private TableColumn<PaymentDto, Long> clientIdColumn;
-    @FXML private TableColumn<PaymentDto, String> ownerColumn;
-    @FXML private TableColumn<PaymentDto, String> addressColumn;
-    @FXML private TableColumn<PaymentDto, Integer> amountColumn;
-    @FXML private TableColumn<PaymentDto, Date> periodColumn;
+    @FXML private TableView<PaymentRow> theTable;
+    @FXML private TableColumn<PaymentRow, Long> clientIdColumn;
+    @FXML private TableColumn<PaymentRow, String> ownerColumn;
+    @FXML private TableColumn<PaymentRow, String> addressColumn;
+    @FXML private TableColumn<PaymentRow, Integer> amountColumn;
+    @FXML private TableColumn<PaymentRow, Date> periodColumn;
+
 
     @FXML
-    private void switchToForm() throws IOException {
-        App.setRoot("form");
+    private void deleteThePayment() throws IOException {
+//        App.setRoot("form");
+
     }
+
+    @FXML
+    private void switchToThePayment() throws IOException {
+
+        PaymentRow paymentRow = theTable.getSelectionModel().getSelectedItem();
+        System.out.println(paymentRow.getId());
+
+        App.setRoot("form");
+
+    }
+
+    @FXML
+    private void switchToNewPayment() throws IOException {
+//        App.setRoot("form");
+
+    }
+
 
     @FXML
     private void request(){
@@ -50,29 +68,29 @@ public class PrimaryController implements Initializable {
 //
 //    }
 
-    private ObservableList<PaymentDto> getPayments() {
+    private ObservableList<PaymentRow> getPayments() {
 
-        ObservableList<PaymentDto> observableList = FXCollections.observableArrayList();
+        ObservableList<PaymentRow> observableList = FXCollections.observableArrayList();
 
         Date date = new Date();
-        observableList.add(new PaymentDto(1L,"Pete", "arbat", 2000, date));
-        observableList.add(new PaymentDto(2L,"Pete", "arbat", 2000, date));
-        observableList.add(new PaymentDto(3L,"Pete", "arbat", 2000, date));
-        observableList.add(new PaymentDto(4L,"Pete", "arbat", 2000, date));
-        observableList.add(new PaymentDto(5L,"Pete", "arbat", 2000, date));
-        observableList.add(new PaymentDto(6L,"Pete", "arbat", 2000, date));
-        observableList.add(new PaymentDto(7L,"Pete", "arbat", 2000, date));
-        observableList.add(new PaymentDto(8L,"Pete", "arbat", 2000, date));
-        observableList.add(new PaymentDto(9L,"Pete", "arbat", 2000, date));
-        observableList.add(new PaymentDto(1L,"Pete", "arbat", 2000, date));
-        observableList.add(new PaymentDto(2L,"Pete", "arbat", 2000, date));
-        observableList.add(new PaymentDto(3L,"Pete", "arbat", 2000, date));
-        observableList.add(new PaymentDto(4L,"Pete", "arbat", 2000, date));
-        observableList.add(new PaymentDto(5L,"Pete", "arbat", 2000, date));
-        observableList.add(new PaymentDto(6L,"Pete", "arbat", 2000, date));
-        observableList.add(new PaymentDto(7L,"Pete", "arbat", 2000, date));
-        observableList.add(new PaymentDto(8L,"Pete", "arbat", 2000, date));
-        observableList.add(new PaymentDto(9L,"Pete", "arbat", 2000, date));
+        observableList.add(new PaymentRow(1L,"Pete", "arbat", 2000, date));
+        observableList.add(new PaymentRow(2L,"Pete", "arbat", 2000, date));
+        observableList.add(new PaymentRow(3L,"Pete", "arbat", 2000, date));
+        observableList.add(new PaymentRow(4L,"Pete", "arbat", 2000, date));
+        observableList.add(new PaymentRow(5L,"Pete", "arbat", 2000, date));
+        observableList.add(new PaymentRow(6L,"Pete", "arbat", 2000, date));
+        observableList.add(new PaymentRow(7L,"Pete", "arbat", 2000, date));
+        observableList.add(new PaymentRow(8L,"Pete", "arbat", 2000, date));
+        observableList.add(new PaymentRow(9L,"Pete", "arbat", 2000, date));
+        observableList.add(new PaymentRow(1L,"Pete", "arbat", 2000, date));
+        observableList.add(new PaymentRow(2L,"Pete", "arbat", 2000, date));
+        observableList.add(new PaymentRow(3L,"Pete", "arbat", 2000, date));
+        observableList.add(new PaymentRow(4L,"Pete", "arbat", 2000, date));
+        observableList.add(new PaymentRow(5L,"Pete", "arbat", 2000, date));
+        observableList.add(new PaymentRow(6L,"Pete", "arbat", 2000, date));
+        observableList.add(new PaymentRow(7L,"Pete", "arbat", 2000, date));
+        observableList.add(new PaymentRow(8L,"Pete", "arbat", 2000, date));
+        observableList.add(new PaymentRow(9L,"Pete", "arbat", 2000, date));
 
 
         return observableList;
@@ -81,11 +99,11 @@ public class PrimaryController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        clientIdColumn.setCellValueFactory(new PropertyValueFactory<PaymentDto, Long>("id"));
-        ownerColumn.setCellValueFactory(new PropertyValueFactory<PaymentDto, String>("name"));
-        addressColumn.setCellValueFactory(new PropertyValueFactory<PaymentDto, String>("address"));
-        amountColumn.setCellValueFactory(new PropertyValueFactory<PaymentDto, Integer>("amount"));
-        periodColumn.setCellValueFactory(new PropertyValueFactory<PaymentDto, Date>("period"));
+        clientIdColumn.setCellValueFactory(new PropertyValueFactory<PaymentRow, Long>("id"));
+        ownerColumn.setCellValueFactory(new PropertyValueFactory<PaymentRow, String>("name"));
+        addressColumn.setCellValueFactory(new PropertyValueFactory<PaymentRow, String>("address"));
+        amountColumn.setCellValueFactory(new PropertyValueFactory<PaymentRow, Integer>("amount"));
+        periodColumn.setCellValueFactory(new PropertyValueFactory<PaymentRow, Date>("period"));
 
         theTable.setItems(getPayments());
     }
