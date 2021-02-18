@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Controllers;
 
 import java.io.IOException;
 import java.net.URL;
@@ -17,6 +17,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import org.example.App;
+import org.example.Pojos.PaymentRow;
 
 public class PrimaryController implements Initializable {
 
@@ -124,7 +126,7 @@ public class PrimaryController implements Initializable {
             root = loader.load();
 
             FormController formController = loader.getController();
-            formController.transferId(id);
+            formController.setId(id);
 
             App.setRoot("form");
 
