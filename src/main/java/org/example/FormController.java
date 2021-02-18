@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 
 public class FormController {
 
-    private Long orderId = null;
+    private Long orderId;
 
     @FXML
     private void switchToPrimary() throws IOException {
@@ -13,7 +13,13 @@ public class FormController {
     }
 
     public void transferId(Long id) {
-        orderId = id;
+
+        if (id >= 0) {
+            orderId = id;
+//            getPaymentDetails(Long id);
+        } else {
+            orderId = null;
+        }
 
         System.out.println(orderId);
     }

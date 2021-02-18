@@ -38,32 +38,14 @@ public class PrimaryController implements Initializable {
     private void switchToThePayment() {
 
         PaymentRow paymentRow = theTable.getSelectionModel().getSelectedItem();
-        Parent root = null;
-
-        try {
-
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/form.fxml"));
-            root = loader.load();
-
-            FormController formController = loader.getController();
-            formController.transferId(paymentRow.getId());
-
-            App.setRoot("form");
-
-        } catch (IOException ex) {
-            System.err.println(ex);
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.setTitle("Error");
-            stage.show();
-        }
+        transferToPayment(paymentRow.getId());
     }
 
 
     @FXML
     private void switchToNewPayment() throws IOException {
-//        App.setRoot("form");
 
+        transferToPayment(-1L);
     }
 
 
@@ -127,5 +109,29 @@ public class PrimaryController implements Initializable {
         periodColumn.setCellValueFactory(new PropertyValueFactory<PaymentRow, Date>("period"));
 
         theTable.setItems(getPayments());
+    }
+
+
+    public void transferToPayment(Long id) {
+
+        Parent root = null;
+
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/form.fxml"));
+            root = loader.load();
+
+            FormController formController = loader.getController();
+            formController.transferId(id);
+
+            App.setRoot("form");
+
+        } catch (IOException ex) {
+            System.err.println(ex);
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Error");
+            stage.show();
+        }
     }
 }
