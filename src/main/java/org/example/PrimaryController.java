@@ -30,7 +30,7 @@ public class PrimaryController implements Initializable {
 
     @FXML
     private void deleteThePayment() throws IOException {
-        
+
         Optional<PaymentRow> selectedRow = Optional.ofNullable(theTable.getSelectionModel().getSelectedItem());
 //        selectedRow.ifPresent(row -> transferToPayment(row.getId()));
     }
@@ -40,7 +40,7 @@ public class PrimaryController implements Initializable {
     private void switchToThePayment() {
 
         Optional<PaymentRow> selectedRow = Optional.ofNullable(theTable.getSelectionModel().getSelectedItem());
-        selectedRow.ifPresent(row -> transferToPayment(row.getId()));
+        selectedRow.ifPresent(payment -> transferToPayment(payment.getId()));
     }
 
 
