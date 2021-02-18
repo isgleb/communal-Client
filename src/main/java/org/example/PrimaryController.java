@@ -3,6 +3,7 @@ package org.example;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Date;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
@@ -29,16 +30,17 @@ public class PrimaryController implements Initializable {
 
     @FXML
     private void deleteThePayment() throws IOException {
-//        App.setRoot("form");
-
+        
+        Optional<PaymentRow> selectedRow = Optional.ofNullable(theTable.getSelectionModel().getSelectedItem());
+//        selectedRow.ifPresent(row -> transferToPayment(row.getId()));
     }
 
 
     @FXML
     private void switchToThePayment() {
 
-        PaymentRow paymentRow = theTable.getSelectionModel().getSelectedItem();
-        transferToPayment(paymentRow.getId());
+        Optional<PaymentRow> selectedRow = Optional.ofNullable(theTable.getSelectionModel().getSelectedItem());
+        selectedRow.ifPresent(row -> transferToPayment(row.getId()));
     }
 
 
