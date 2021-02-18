@@ -8,10 +8,14 @@ import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 public class PrimaryController implements Initializable {
 
@@ -29,15 +33,32 @@ public class PrimaryController implements Initializable {
 
     }
 
+
     @FXML
-    private void switchToThePayment() throws IOException {
+    private void switchToThePayment() {
 
         PaymentRow paymentRow = theTable.getSelectionModel().getSelectedItem();
-        System.out.println(paymentRow.getId());
+        Parent root = null;
 
-        App.setRoot("form");
+        try {
 
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/form.fxml"));
+            root = loader.load();
+
+            FormController formController = loader.getController();
+            formController.transferId(paymentRow.getId());
+
+            App.setRoot("form");
+
+        } catch (IOException ex) {
+            System.err.println(ex);
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Error");
+            stage.show();
+        }
     }
+
 
     @FXML
     private void switchToNewPayment() throws IOException {
