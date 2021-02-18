@@ -1,26 +1,34 @@
 package org.example.httpClient;
 
-//import org.apache.http.impl.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.HttpResponse;
 
-public class webClient {
-    public static void connect() {
+import java.io.IOException;
+import java.util.Scanner;
 
+public class WebClient {
+    public static void connect() throws IOException {
 
+        CloseableHttpClient httpclient = HttpClients.createDefault();
 
-        HttpClient client = new DefaultHttpClient();
-        HttpGet request = new HttpGet("http://www.vogella.com");
-        HttpResponse response = client.execute(request);
+        //Creating a HttpGet object
+        HttpGet httpget = new HttpGet("http://localhost:8080/clients");
 
-// Get the response
-        BufferedReader rd = new BufferedReader
-                (new InputStreamReader(
-                        response.getEntity().getContent()));
+        //Printing the method used
+        System.out.println("Request Type: "+httpget.getMethod());
 
-        String line = "";
-        while ((line = rd.readLine()) != null) {
-            textView.append(line);
+        //Executing the Get request
+        HttpResponse httpresponse = httpclient.execute(httpget);
+
+        Scanner sc = new Scanner(httpresponse.getEntity().getContent());
+
+        //Printing the status line
+        System.out.println(httpresponse.getStatusLine());
+        while(sc.hasNext()) {
+            System.out.println(sc.nextLine());
         }
-    }
 
 
-}
+}}

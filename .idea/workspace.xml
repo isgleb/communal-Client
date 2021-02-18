@@ -17,13 +17,6 @@
       </list>
     </option>
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="1ocZAWAVkxPb7XYo4oMBILgMCkv" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
@@ -31,10 +24,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -42,9 +35,12 @@
       <recent name="org" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="App" type="Application" factoryName="Application" singleton="false" temporary="true">
+  <component name="RunManager" selected="Application.Run">
+    <configuration name="Run" type="Application" factoryName="Application" singleton="false">
+      <option name="ALTERNATIVE_JRE_PATH" value="14" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="org.example.App" />
+      <module name="communalClient" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.*" />
@@ -55,11 +51,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.App" />
-      </list>
-    </recent_temporary>
+    <configuration name="Run" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="javafx:run" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Run" />
+      <item itemvalue="Maven.Run" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -71,35 +91,5 @@
       <updated>1613587697530</updated>
     </task>
     <servers />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="494" y="361" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1613595370796">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="494" y="361" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1440.900@0.0.1440.900" timestamp="1613595370796" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1613594237852">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1613594237852" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1613594237851">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1613594237851" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1613594237850">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1613594237850" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1613594237852">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1613594237852" />
-    <state x="258" y="109" key="Maven.ArtifactSearchDialog" timestamp="1613595830569">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="258" y="109" key="Maven.ArtifactSearchDialog/0.0.1440.900@0.0.1440.900" timestamp="1613595830569" />
-    <state x="229" y="57" key="SettingsEditor" timestamp="1613587817996">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="229" y="57" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1613587817996" />
   </component>
 </project>

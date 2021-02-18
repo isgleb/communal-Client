@@ -6,9 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="communalClient" />
         <module name="communal client" />
-        <module name="communal-client" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="communal-client" target="11" />
+      <module name="communalClient" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
