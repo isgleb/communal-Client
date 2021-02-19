@@ -33,29 +33,29 @@ public class HttpController {
 
         String url = "http://localhost:8080/payments/1";
 
-        PaymentDto[] books = null;
-        // Create an asyn HttpClient
+//        PaymentDto[] books = null;
+//        // Create an asyn HttpClient
         CloseableHttpAsyncClient httpclient = HttpAsyncClients.createDefault();
-        try {
-            httpclient.start();
-            HttpGet request = new HttpGet(URI_BOOK);
-            Future<HttpResponse> future = httpclient.execute(request, null);
-            // Wait and retrieve the result
-            HttpResponse response = future.get();
-            System.out.println("Response code:" + response.getStatusLine().getStatusCode());
-            // Determine whether the request was successfully or not
-            if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
-                HttpEntity httpEntity = response.getEntity();
-                // Create a Jackson ObjectMapper to convert the JSON response to Java objects
-                ObjectMapper mapper = new ObjectMapper();
-                // Read the inputstream and convert to an array of Book
-                books = mapper.readValue(httpEntity.getContent(), Book[].class);
-            }
-        } finally {
-            HttpAsyncClientUtils.closeQuietly(httpclient);
-        }
-        return books;
-    }
+//        try {
+//            httpclient.start();
+//            HttpGet request = new HttpGet(URI_BOOK);
+//            Future<HttpResponse> future = httpclient.execute(request, null);
+//            // Wait and retrieve the result
+//            HttpResponse response = future.get();
+//            System.out.println("Response code:" + response.getStatusLine().getStatusCode());
+//            // Determine whether the request was successfully or not
+//            if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+//                HttpEntity httpEntity = response.getEntity();
+//                // Create a Jackson ObjectMapper to convert the JSON response to Java objects
+//                ObjectMapper mapper = new ObjectMapper();
+//                // Read the inputstream and convert to an array of Book
+//                books = mapper.readValue(httpEntity.getContent(), Book[].class);
+//            }
+//        } finally {
+//            HttpAsyncClientUtils.closeQuietly(httpclient);
+//        }
+//        return books;
+//    }
 
 
     }
