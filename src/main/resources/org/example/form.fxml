@@ -13,7 +13,7 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.layout.AnchorPane?>
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.FormController">
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.FormController">
     <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="548.0">
         <children>
         <Button fx:id="saveButton" layoutX="18.0" layoutY="407.0" mnemonicParsing="false" onAction="#saveChanges" text="сохранить изменения" />

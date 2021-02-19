@@ -1,4 +1,4 @@
-package org.example.Controllers;
+package org.example;
 
 import java.io.IOException;
 import java.net.URL;
@@ -17,8 +17,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import org.example.App;
-import org.example.Pojos.PaymentRow;
 
 public class PrimaryController implements Initializable {
 
@@ -49,7 +47,7 @@ public class PrimaryController implements Initializable {
     @FXML
     private void switchToNewPayment() throws IOException {
 
-        transferToPayment(-1L);
+        transferToPayment(null);
     }
 
 
@@ -131,11 +129,12 @@ public class PrimaryController implements Initializable {
             App.setRoot("form");
 
         } catch (IOException ex) {
-            System.err.println(ex);
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.setTitle("Error");
-            stage.show();
+            ex.printStackTrace();
+//            System.err.println(ex.printStackTrace(););
+//            Stage stage = new Stage();
+////            stage.setScene(new Scene(root));
+//            stage.setTitle("Error");
+//            stage.show();
         }
     }
 }

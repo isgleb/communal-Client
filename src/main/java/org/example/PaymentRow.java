@@ -1,4 +1,4 @@
-package org.example.Pojos;
+package org.example;
 
 import javafx.beans.property.SimpleStringProperty;
 
